@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Story Generator</title>
+    <style>
+      body {
+        font-family: Georgia, serif;
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      textarea {
+        width: 100%;
+        height: 300px;
+        margin-top: 1rem;
+      }
+      input,
+      select,
+      button {
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📝 AI Story Generator with Plot Twists</h1>
+    <form method="POST">
+      <label>Genre:</label>
+      <input type="text" name="genre" required />
+
+      <label>Main Character Name:</label>
+      <input type="text" name="character" required />
+
+      <label>Setting:</label>
+      <input type="text" name="setting" required />
+
+      <label>Tone:</label>
+      <input type="text" name="tone" required />
+
+      <button type="submit">Generate Story</button>
+    </form>
+
+    {% if story %}
+    <hr />
+    <h2>Your Generated Story</h2>
+    <textarea readonly>{{ story }}</textarea>
+    {% endif %}
+  </body>
+</html>
